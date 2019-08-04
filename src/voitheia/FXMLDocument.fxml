@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="651.0" style="-fx-background-color: #00000000;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="voitheia.FXMLDocumentController">
+   <children>
+      <AnchorPane layoutY="3.0" pickOnBounds="false" prefHeight="84.0" prefWidth="681.0" style="-fx-background-color: #3D4956; -fx-background-radius: 70;" styleClass="bodybg">
+         <children>
+            <Button fx:id="minimizebtn" layoutX="445.0" layoutY="24.0" mnemonicParsing="false" onAction="#minimizer" prefHeight="29.0" prefWidth="29.0" style="-fx-background-radius: 90;" styleClass="minimize" />
+            <Button fx:id="closebtn" layoutX="588.0" layoutY="24.0" mnemonicParsing="false" onAction="#close" prefHeight="29.0" prefWidth="29.0" style="-fx-background-radius: 100; -fx-background-insets: 100;" styleClass="close" stylesheets="@styles.css" />
+            <Button fx:id="aboutButton" layoutX="63.0" layoutY="24.0" mnemonicParsing="false" onAction="#minimizer" prefHeight="32.0" prefWidth="37.0" style="-fx-background-radius: 60; -fx-background-insets: 100;" styleClass="about" />
+            <Button fx:id="therapistButton" layoutX="304.0" layoutY="22.0" mnemonicParsing="false" onAction="#minimizer" prefHeight="37.0" prefWidth="37.0" style="-fx-background-radius: 60; -fx-background-insets: 100;" styleClass="therapist" />
+            <Button fx:id="diagnosisButton" layoutX="177.0" layoutY="24.0" mnemonicParsing="false" onAction="#minimizer" prefHeight="32.0" prefWidth="37.0" style="-fx-background-radius: 60; -fx-background-insets: 100;" styleClass="diagnose" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="therapistPane" layoutX="1.0" layoutY="93.0" prefHeight="384.0" prefWidth="678.0" style="-fx-background-color: #3D4956;" styleClass="bodybg" visible="false">
+         <children>
+            <ImageView fitHeight="56.0" fitWidth="84.0" layoutX="307.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_Vegan_Symbol_104px.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="therapistSendButton" layoutX="534.0" layoutY="328.0" mnemonicParsing="false" onAction="#therapistAction" onMouseClicked="#therapistAction" prefHeight="25.0" prefWidth="102.0" stylesheets="@styles.css" text="SEND" />
+            <TextArea fx:id="therapistTextArea" layoutX="41.0" layoutY="98.0" opacity="0.61" prefHeight="200.0" prefWidth="596.0" text="Therapist:   Type in 'Hello' to begin&#10;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextArea>
+            <TextField fx:id="therapistTextField" layoutX="41.0" layoutY="329.0" opacity="0.72" prefHeight="25.0" prefWidth="459.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="diagnosisPane" layoutX="1.0" layoutY="93.0" prefHeight="384.0" prefWidth="678.0" style="-fx-background-color: #3D4956;" styleClass="bodybg" visible="false">
+         <children>
+            <Button fx:id="yesButton" layoutX="166.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="102.0" style="-fx-background-radius: 70; -fx-background-color: #515D6D;" text="YES" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font></Button>
+            <Button fx:id="noButton" layoutX="444.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="102.0" style="-fx-background-radius: 70; -fx-background-color: #515D6D;" text="NO" textFill="#f5f5f5">
+               <font>
+                  <Font size="21.0" />
+               </font></Button>
+            <Label id="questionTag" fx:id="questionLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="104.0" prefHeight="99.0" prefWidth="552.0" text="Have you recently suffered a significant loss or bereavement?" textFill="#c63232" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <ImageView fitHeight="65.0" fitWidth="62.0" layoutX="310.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_Vegan_Symbol_104px.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="showTreatmentButton" layoutX="81.0" layoutY="275.0" mnemonicParsing="false" onAction="#showTreatment" prefHeight="45.0" prefWidth="192.0" style="-fx-background-radius: 70; -fx-background-color: #515D6D;" text="Show treatments" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="speakToTheRapistButton" layoutX="369.0" layoutY="275.0" mnemonicParsing="false" onAction="#minimizer" prefHeight="45.0" prefWidth="253.0" style="-fx-background-radius: 70; -fx-background-color: #515D6D;" text="Speak to our therapist" textFill="#f5f5f5" visible="false">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="aboutPane" layoutX="1.0" layoutY="93.0" prefHeight="384.0" prefWidth="678.0" style="-fx-background-color: #3D4956;" styleClass="bodybg" stylesheets="@styles.css" visible="false">
+         <children>
+            <ImageView fitHeight="128.0" fitWidth="143.0" layoutX="263.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/FullSizeRender-1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="29.0" layoutX="196.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_Twitter_96px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="29.0" layoutX="196.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_Git_100px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="29.0" layoutX="196.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_Gmail_96px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="249.0" layoutY="228.0" prefHeight="32.0" prefWidth="209.0" text="nottherealalanturing" textFill="#030207">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="247.0" layoutY="264.0" prefHeight="32.0" prefWidth="266.0" text="nottherealalanturing" textFill="#030207">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="247.0" layoutY="305.0" prefHeight="32.0" prefWidth="266.0" text="assadisah@abu.edu.ng" textFill="#030207">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="276.0" layoutY="160.0" prefHeight="32.0" prefWidth="209.0" text="Assad Isah" textFill="#030207">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="treatmentPane" layoutX="1.0" layoutY="94.0" prefHeight="384.0" prefWidth="678.0" style="-fx-background-color: #3D4956;" styleClass="bodybg" stylesheets="@styles.css" visible="false">
+         <children>
+            <TitledPane fx:id="anxietyTitledPane" animated="false" layoutX="80.0" layoutY="20.0" opacity="0.61" prefHeight="336.0" prefWidth="515.0" text="Anxiety" visible="false">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="430.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-3.0" prefHeight="29.0" prefWidth="166.0" text="-Treatment consists of therapy" />
+                        <Label layoutX="30.0" layoutY="3.0" prefHeight="56.0" prefWidth="407.0" text="Treatment includes counselling or medication, including antidepressants." wrapText="true" />
+                        <Label layoutX="12.0" layoutY="47.0" prefHeight="17.0" prefWidth="172.0" text="-Self-care" />
+                        <Label layoutX="24.0" layoutY="45.0" prefHeight="84.0" prefWidth="405.0" text="Avoid alcohol, Reduce caffeine intake, Physical exercise, Stress management, Quitting smoking, Relaxation techniques, and Healthy diet." wrapText="true" />
+                        <Label layoutX="12.0" layoutY="113.0" prefHeight="17.0" prefWidth="115.0" text="-Therapies" />
+                        <Label layoutX="24.0" layoutY="133.0" prefHeight="29.0" prefWidth="399.0" text="Cognitive behavioral therapy, Meditation, and Psychotherapy." wrapText="true" />
+                        <Label layoutX="12.0" layoutY="164.0" prefHeight="17.0" prefWidth="159.0" text="-Medications" />
+                        <Label layoutX="23.0" layoutY="176.0" prefHeight="75.0" prefWidth="443.0" text="Selective Serotonin Reuptake Inhibitor (SSRI), Anxiolytic, Antidepressant, Sedative, and Nerve pain medication_Specialists_Clinical Psychologist, Psychiatrist, and Primary Care Provider (PCP)." wrapText="true" />
+                        <Label layoutX="13.0" layoutY="252.0" prefHeight="17.0" prefWidth="292.0" text="-Consult a doctor for medical advice" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane fx:id="ocdTitledPane" animated="false" layoutX="80.0" layoutY="20.0" opacity="0.61" prefHeight="336.0" prefWidth="515.0" text="Obssesive Compulsive Disorder (OCD)" visible="false">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="430.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-3.0" prefHeight="29.0" prefWidth="252.0" text="-Treatment consists of self care and therapy" />
+                        <Label layoutX="30.0" layoutY="3.0" prefHeight="56.0" prefWidth="407.0" text="Treatment includes talk therapy, medication or both." wrapText="true" />
+                        <Label layoutX="12.0" layoutY="49.0" prefHeight="17.0" prefWidth="115.0" text="-Therapies" />
+                        <Label layoutX="24.0" layoutY="51.0" prefHeight="102.0" prefWidth="399.0" text="Support group, Cognitive behavioral therapy, Aversion therapy, Psychoeducation, Rational emotive behavior therapy, Exposure and response prevention, Psychotherapy, Systematic desensitization, and Group psychotherapy" wrapText="true" />
+                        <Label layoutX="12.0" layoutY="149.0" prefHeight="17.0" prefWidth="159.0" text="-Medications" />
+                        <Label layoutX="23.0" layoutY="138.0" prefHeight="75.0" prefWidth="443.0" text="Selective Serotonin Reuptake Inhibitor (SSRI), Anxiolytic, and Antidepressant" wrapText="true" />
+                        <Label layoutX="14.0" layoutY="241.0" prefHeight="17.0" prefWidth="292.0" text="-Consult a doctor for medical advice" />
+                        <Label layoutX="15.0" layoutY="191.0" prefHeight="17.0" prefWidth="159.0" text="-Specialists" />
+                        <Label layoutX="35.0" layoutY="178.0" prefHeight="75.0" prefWidth="443.0" text="Clinical Psychologist and Psychiatrist" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="depressionTitledPane" animated="false" layoutX="80.0" layoutY="20.0" opacity="0.61" prefHeight="336.0" prefWidth="515.0" text="Depression" visible="false">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="430.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-3.0" prefHeight="29.0" prefWidth="252.0" text="-Treatment consists of self care and therapy" />
+                        <Label layoutX="30.0" layoutY="16.0" prefHeight="56.0" prefWidth="407.0" text="The mainstay of treatment is usually medication, talk therapy or a combination of the two. Increasingly, research suggests that these treatments may normalise brain changes associated with depression." wrapText="true" />
+                        <Label layoutX="18.0" layoutY="75.0" prefHeight="17.0" prefWidth="115.0" text="-Therapies" />
+                        <Label layoutX="30.0" layoutY="51.0" prefHeight="102.0" prefWidth="399.0" text="Cognitive behavioral therapy, Behaviour therapy, and Psychotherapy" wrapText="true" />
+                        <Label layoutX="21.0" layoutY="120.0" prefHeight="17.0" prefWidth="159.0" text="-Medications" />
+                        <Label layoutX="29.0" layoutY="118.0" prefHeight="75.0" prefWidth="443.0" text="Selective Serotonin Reuptake Inhibitor (SSRI), Antidepressant, Anxiolytic, and Antipsychotic" wrapText="true" />
+                        <Label layoutX="20.0" layoutY="272.0" prefHeight="17.0" prefWidth="292.0" text="-Consult a doctor for medical advice" />
+                        <Label layoutX="19.0" layoutY="180.0" prefHeight="17.0" prefWidth="159.0" text="-Medical procedure" />
+                        <Label layoutX="29.0" layoutY="178.0" prefHeight="56.0" prefWidth="443.0" text="Electroconvulsive therapy" wrapText="true" />
+                        <Label layoutX="32.0" layoutY="225.0" prefHeight="56.0" prefWidth="443.0" text="Clinical Psychologist, Psychiatrist, Primary Care Provider (PCP), and Emergency Medicine Doctor" wrapText="true" />
+                        <Label layoutX="22.0" layoutY="220.0" prefHeight="17.0" prefWidth="159.0" text="-Specialists" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane fx:id="ptsdTitledPane" animated="false" layoutX="80.0" layoutY="20.0" opacity="0.61" prefHeight="336.0" prefWidth="515.0" text="Post Traumatic Stress Disorder(PTSD)">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="347.0" prefWidth="430.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="-3.0" prefHeight="29.0" prefWidth="304.0" text="-Treatment consists of medications and therapy" />
+                        <Label layoutX="30.0" layoutY="16.0" prefHeight="56.0" prefWidth="407.0" text="Treatment includes different types of psychotherapy as well as medications to manage symptoms." wrapText="true" />
+                        <Label layoutX="18.0" layoutY="69.0" prefHeight="17.0" prefWidth="115.0" text="-Therapies" />
+                        <Label layoutX="30.0" layoutY="53.0" prefHeight="102.0" prefWidth="399.0" text="Cognitive behavioral therapy, Eye movement desensitization and reprocessing, and Exposure and response prevention" wrapText="true" />
+                        <Label layoutX="21.0" layoutY="128.0" prefHeight="17.0" prefWidth="159.0" text="-Medications" />
+                        <Label layoutX="29.0" layoutY="124.0" prefHeight="75.0" prefWidth="443.0" text="Selective Serotonin Reuptake Inhibitor (SSRI)" wrapText="true" />
+                        <Label layoutX="20.0" layoutY="254.0" prefHeight="17.0" prefWidth="292.0" text="-Consult a doctor for medical advice" />
+                        <Label layoutX="32.0" layoutY="198.0" prefHeight="56.0" prefWidth="443.0" text="Clinical Psychologist and Psychiatrist" wrapText="true" />
+                        <Label layoutX="22.0" layoutY="191.0" prefHeight="17.0" prefWidth="159.0" text="-Specialists" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="firstDiagPane" layoutX="1.0" layoutY="92.0" prefHeight="384.0" prefWidth="678.0" style="-fx-background-color: #3D4956;" styleClass="bodybg" stylesheets="@styles.css" visible="false">
+         <children>
+            <Label fx:id="nameLabel" layoutX="126.0" layoutY="75.0" prefHeight="62.0" prefWidth="459.0" text="Hello! Please enter your name and click proceed." wrapText="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameTextField" layoutX="161.0" layoutY="150.0" onAction="#dynamicDiag" prefHeight="25.0" prefWidth="354.0" />
+            <Button fx:id="proceedButton" layoutX="311.0" layoutY="213.0" mnemonicParsing="false" onAction="#dynamicDiag" text="Proceed" />
+            <Label fx:id="genderLabel" layoutX="211.0" layoutY="69.0" prefHeight="56.0" prefWidth="367.0" text="Select Your Gender" visible="false">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="maleGenderButton" layoutX="149.0" layoutY="194.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="25.0" prefWidth="140.0" text="Male" visible="false" />
+            <Button fx:id="femaleGenderButton" layoutX="369.0" layoutY="194.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="25.0" prefWidth="171.0" text="Female" visible="false" />
+            <Label fx:id="ageLabel" layoutX="208.0" layoutY="79.0" prefHeight="17.0" prefWidth="345.0" text="Select  Your Age?" visible="false">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="preteenButton" layoutX="97.0" layoutY="194.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="25.0" prefWidth="140.0" text="0 - 12" visible="false" />
+            <Button fx:id="teenishButton" layoutX="285.0" layoutY="194.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="25.0" prefWidth="120.0" text="13 - 39" visible="false" />
+            <Button fx:id="agedButton" layoutX="480.0" layoutY="194.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="25.0" prefWidth="120.0" text="40+" visible="false" />
+            <Label fx:id="malePreteenLabel" layoutX="58.0" layoutY="79.0" prefHeight="69.0" prefWidth="559.0" text="Is there a history of Mental Illness in your family?" visible="false" wrapText="true">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="maleYesPreteenButton" layoutX="141.0" layoutY="194.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="maleNoPreteenButton" layoutX="355.0" layoutY="194.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="maleTeenAgedAlchoholLabel" layoutX="157.0" layoutY="81.0" onDragDetected="#dynamicDiag" prefHeight="69.0" prefWidth="367.0" text="Do you take alchohol?" visible="false">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="maleYesTeenAgedAlchohoButton" layoutX="161.0" layoutY="214.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="maleNoTeenAgedButtonAlchohol" layoutX="375.0" layoutY="214.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="maleTeenAgedMedicationLabel" layoutX="111.0" layoutY="71.0" prefHeight="69.0" prefWidth="471.0" text="Are you on any medication?" visible="false">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="maleYesTeenAgedMedicationButton" layoutX="151.0" layoutY="204.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="maleNoTeenAgedButtonMedication" layoutX="365.0" layoutY="204.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="maleTeenAgedPDLabel" layoutX="89.0" layoutY="73.0" prefHeight="159.0" prefWidth="571.0" text="Ever been diagnosed with any mental illness?" visible="false" wrapText="true">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="maleYesTeenAgedPDButton" layoutX="191.0" layoutY="244.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="maleNoTeenAgedPDButton" layoutX="405.0" layoutY="244.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="maleTeenAgedMHLabel" layoutX="91.0" layoutY="69.0" onDragDetected="#dynamicDiag" prefHeight="159.0" prefWidth="571.0" text="History of mental illness run in your family?" visible="false" wrapText="true">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="maleYesTeenAgedMHButton" layoutX="187.0" layoutY="254.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="maleNoTeenAgedMHButton" layoutX="415.0" layoutY="254.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="maleTeenAgedHDLabel" layoutX="79.0" layoutY="63.0" prefHeight="159.0" prefWidth="571.0" text="Have you taken any hard or illegal drugs in the past two months?" visible="false" wrapText="true">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="maleYesTeenAgedHDButton" layoutX="181.0" layoutY="234.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="maleNoTeenAgedHDButton" layoutX="395.0" layoutY="234.0" mnemonicParsing="false" onAction="#dynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="femaleDiagPane" layoutX="1.0" layoutY="93.0" prefHeight="384.0" prefWidth="678.0" style="-fx-background-color: #3D4956;" styleClass="bodybg" stylesheets="@styles.css" visible="false">
+         <children>
+            <Label fx:id="fAgeLabel" layoutX="208.0" layoutY="79.0" onDragDetected="#FemaleDynamicDiag" prefHeight="17.0" prefWidth="345.0" text="Select  Your Age?" visible="false">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="fPreteenButton" layoutX="97.0" layoutY="194.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="25.0" prefWidth="140.0" text="0 - 12" visible="false" />
+            <Button fx:id="fTeenishButton" layoutX="285.0" layoutY="194.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="25.0" prefWidth="120.0" text="13 - 40" visible="false" />
+            <Button fx:id="fAgedButton" layoutX="480.0" layoutY="194.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="25.0" prefWidth="120.0" text="40+" visible="false" />
+            <Label fx:id="femalePreteenLabel1" layoutX="58.0" layoutY="79.0" prefHeight="69.0" prefWidth="559.0" text="Is there a history of Mental Illness in your family?" visible="false" wrapText="true">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesPreteenButton1" layoutX="141.0" layoutY="194.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoPreteenButton1" layoutX="355.0" layoutY="194.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="femalePreteenLabel2" layoutX="68.0" layoutY="89.0" prefHeight="69.0" prefWidth="559.0" text="Ever witnessed a traumatising incidence?" visible="false" wrapText="true">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesPreteenButton2" layoutX="151.0" layoutY="204.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoPreteenButton2" layoutX="365.0" layoutY="204.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="femaleteenAgedLabel1" layoutX="59.0" layoutY="45.0" prefHeight="159.0" prefWidth="571.0" text="Are you pregnant or ever been pregnant?" visible="false" wrapText="true">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesTeenAgedButton1" layoutX="171.0" layoutY="224.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoTeenAgedButton1" layoutX="385.0" layoutY="224.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="femaleteenAgedLabel2" layoutX="79.0" layoutY="63.0" prefHeight="159.0" prefWidth="571.0" text="Experienced any taumatic event?" visible="false" wrapText="true">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesTeenAgedButton2" layoutX="151.0" layoutY="204.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoTeenAgedButton2" layoutX="365.0" layoutY="204.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="femaleteenAgedLabel5" layoutX="121.0" layoutY="81.0" prefHeight="69.0" prefWidth="471.0" text="Are you currently on any medication?" visible="false">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesTeenAgedButton5" layoutX="161.0" layoutY="214.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoTeenAgedButton5" layoutX="375.0" layoutY="214.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="femaleteenAgedLabel3" layoutX="157.0" layoutY="81.0" prefHeight="69.0" prefWidth="367.0" text="Do you take alchohol?" visible="false">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesTeenAgedButton3" layoutX="161.0" layoutY="214.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoTeenAgedButton3" layoutX="375.0" layoutY="214.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="femaleteenAgedLabel6" layoutX="89.0" layoutY="73.0" prefHeight="159.0" prefWidth="571.0" text="Ever been diagnosed with any mental illness?" visible="false" wrapText="true">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesTeenAgedButton6" layoutX="191.0" layoutY="244.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoTeenAgedButton6" layoutX="405.0" layoutY="244.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+            <Label fx:id="femaleteenAgedLabel4" layoutX="91.0" layoutY="69.0" prefHeight="159.0" prefWidth="571.0" text="History of mental illness run in your family?" visible="false" wrapText="true">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Button fx:id="femaleYesTeenAgedButton4" layoutX="187.0" layoutY="254.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="131.0" text="YES" visible="false" />
+            <Button fx:id="femaleNoTeenAgedButton4" layoutX="415.0" layoutY="254.0" mnemonicParsing="false" onAction="#FemaleDynamicDiag" prefHeight="43.0" prefWidth="150.0" text="NO" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

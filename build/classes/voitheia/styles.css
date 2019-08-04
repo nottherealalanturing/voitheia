@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 15, 2019, 4:56:09 PM
+    Author     : the.devils.advocate
+*/
+
+.bodybg{
+    -fx-background-image: url('campfire.jpg');
+    -fx-background-size: 100% 100%    
+}
+
+.close{
+    -fx-background-image: url('close.png');
+    -fx-background-size: 100% 100%    
+}
+
+.minimize{
+    -fx-background-image: url('minimize.png');
+    -fx-background-size: 100% 100%    
+}
+
+.therapist{
+    -fx-background-image: url('therapist.png');
+    -fx-background-size: 100% 100%    
+}
+
+.diagnose{
+    -fx-background-image: url('diagnose.png');
+    -fx-background-size: 100% 100%    
+}
+
+.about{
+    -fx-background-image: url('about.png');
+    -fx-background-size: 100% 100%    
+}
+
+
+
+  
+
+
